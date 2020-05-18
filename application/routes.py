@@ -11,6 +11,10 @@ def home():
 def about():
     return render_template('about.html', title='About')
 
+@app.route('/quiz')
+def quiz():
+    return render_template('quiz.html', title='Find the right songs for you')
+
 @app.route('/extraversion')
 def extraversion():
     return render_template('extraversion.html', title='Extraversion Songs')
