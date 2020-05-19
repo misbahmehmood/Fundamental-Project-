@@ -2,10 +2,25 @@
   
 {% block body_content %}
 <h1>Your Playlist</h1>
-{% for song in posts %}
-        <h3>{{ song.title }}</h3>
-        <small>{{ song.artist }}</small>
-        <small>{{ song.genre }}</small>
-        <small>{{ song.instrument }}</small>
-{% endfor %}
+
+<form action='' methods= 'POST'>
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.title.label }}
+        {{ form.title }}
+    </p>
+    <p>
+        {{ form.artist.label }}
+        {{ form.artist }}
+    </p>
+    <p>
+        {{ form.genre.label }}
+        {{ form.genre }}
+    </p>
+    <p>
+        {{ form.instrument.label }}
+        {{ form.instrument }}
+    </p>
+        {{ form.submit }}
+
 {% endblock %}

@@ -6,4 +6,13 @@
 	<br>
 	<a href="{{ url_for('quiz') }}">Take the Quiz</a>
 
+	{% for song in songs %}
+	<div>
+		<h3>{{ song.title }}</h3>
+		<span>by<i>{{ song.artist}}</i></span>
+		<span>on the <i>{{song.genre}}</i></span>
+		<span>on the <i>{{song.instrument}}</i></span>
+		
+	</div>
+{% endfor %}
 {% endblock %}

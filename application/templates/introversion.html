@@ -2,9 +2,12 @@
   
 {% block body_content %}
 <h1>Your Playlist</h1>
-{% for playlist in playlists %}
-    {% if playlist.personality == 'introvert' %}
-        {{ playlist.title }}
-    {% endif %}
+<h1>Your Playlist</h1>
+{% for song in posts %}
+        <h3>{{ song.title }}</h3>
+        <small>{{ song.artist }}</small>
+        <small>{{ song.genre }}</small>
+        <small>{{ song.instrument }}</small>
 {% endfor %}
 {% endblock %}
+

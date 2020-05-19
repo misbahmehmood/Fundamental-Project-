@@ -6,8 +6,8 @@ from wtforms.validators import DataRequired, Length, Regexp
 def personality_query():
     return Personality.query
     
-class Questions(FlaskForm):
-    name= StringField ('Enter your name', 
+class QuestionForm(FlaskForm):
+    name= StringField ('Enter your full name', 
     validators= [
         DataRequired(),
         Length(min=3, max=20)
@@ -18,3 +18,19 @@ class Questions(FlaskForm):
     ])
 
     submit=SubmitField('Save')
+
+class SongForm(FlaskForm):
+    title= StringField('Song Title',
+        validators=[DataRequired(),
+    ])
+    artist=StringField('Artist',
+        validators=[DataRequired()
+    ])
+    genre=StringField('Genre',
+        validators=[DataRequired()
+    ])
+    instrument=StringField('Instrument',
+        validators=[DataRequired()
+    ])
+
+    submit=SubmitField('Post')
