@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+{% block body_content %}
+
+<form action='/new' methods= 'POST'>
+<p>
+    <label for='title'>Title</label><br>
+    <input id='title' type='text' name='title'/>
+</p>
+<p>
+    <label for='artist'>Artist</label><br>
+    <input id='artist' type='text' name='artist' />
+</p>
+<p>
+    <label for='genre'>Genre</label><br>
+    <input id='genre' type='text' name='genre' />
+</p>
+
+<p>
+    <label for='instrument'>Instrument</label><br>
+    <input id='isntrument' type='text' name='instrument' />
+</p>
+<p>
+    <button type='submit'>Save Playlist</button>
+</p>
+</form>
+
+
+{% endblock %}
