@@ -6,13 +6,45 @@
 	<br>
 	<a href="{{ url_for('quiz') }}">Take the Quiz</a>
 
-	{% for song in songs %}
 	<div>
+	{% for song in songs %}
 		<h3>{{ song.title }}</h3>
-		<span>by<i>{{ song.artist}}</i></span>
-		<span>on the <i>{{song.genre}}</i></span>
-		<span>on the <i>{{song.instrument}}</i></span>
+		{% if song.title.errors %}
+                <div class="error">
+                        {% for error in song.title.errors %}
+                                <span>{{ error }}</span>
+                        {% endfor %}
+                </div>
+                {% endif %}
+		<small>{{ song.artist}}</small>
+		{% if song.artist.errors %}
+                <div class="error">
+                        {% for error in song.artist.errors %}
+                                <span>{{ error }}</span>
+                        {% endfor %}
+                </div>
+                {% endif %}
+		<br>
+		<small></small>{{ song.genre }}</small>
+		{% if song.genre.errors %}
+                <div class="error">
+                        {% for error in song.genre.errors %}
+                                <span>{{ error }}</span>
+                        {% endfor %}
+                </div>
+                {% endif %}
+		<br>
+		<small>{{ song.instrument }}</small>
+		{% if song.instrument.errors %}
+                <div class="error">
+                        {% for error in song.instrument.errors %}
+                                <span>{{ error }}</span>
+                        {% endfor %}
+                </div>
+                {% endif %}
+		
+        
 		
 	</div>
-{% endfor %}
+	{% endfor %}
 {% endblock %}

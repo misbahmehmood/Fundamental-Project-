@@ -37,7 +37,7 @@ def quiz():
 @app.route('/extraversion', methods=['GET', 'POST'])
     
 def extraversion():
-        postForm=SongForm()
+        form=SongForm()
         if form.validate_on_submit():
             songData=Songs(
                 title=form.title.data,
@@ -50,7 +50,7 @@ def extraversion():
             return redirect(url_for('home'))
         else:
             print(form.errors)
-        return render_template('extraversion.html', title='Extraversion Songs', form=postForm)
+        return render_template('extraversion.html', title='Extraversion Songs', form=form)
 
 @app.route('/new', methods=['GET', 'POST'])
 def extraversion_new():
