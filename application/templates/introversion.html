@@ -1,4 +1,10 @@
 {% extends 'layout.html' %}
   
 {% block body_content %}
+<h1>Your Playlist</h1>
+{% for playlist in playlists %}
+    {% if playlist.personality == 'introvert' %}
+        {{ playlist.title }}
+    {% endif %}
+{% endfor %}
 {% endblock %}

@@ -1,7 +1,10 @@
 from flask import render_template
 from application import app
 
-
+playlist= [
+    {'title': 'Cinematic', 'personality': 'extravert'},
+    {'title': 'Classical', 'personality': 'introvert'}
+]
 @app.route('/')
 @app.route('/home')
 def home():
@@ -13,12 +16,12 @@ def about():
 
 @app.route('/quiz')
 def quiz():
-    return render_template('quiz.html', title='Find the right songs for you')
+    return render_template('quiz.html', title='Quiz')
 
 @app.route('/extraversion')
 def extraversion():
-    return render_template('extraversion.html', title='Extraversion Songs')
+    return render_template('extraversion.html', title='Extraversion Songs', playlists=playlist)
 
 @app.route('/introversion')
 def introversion():
-    return render_template('introversion.html', title='Introversion Songs')
+    return render_template('introversion.html', title='Introversion Songs', playlists=playlist)
