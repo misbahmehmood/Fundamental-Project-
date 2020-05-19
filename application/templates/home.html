@@ -7,15 +7,18 @@
 	<a href="{{ url_for('quiz') }}">Take the Quiz</a>
 
 	<div>
-	{% for song in songs %}
-		<h3>{{ song.title }}</h3>
+        {% for song in songs %}
+                <hr>
+		<h4>{{ song.title }}</h4>
 		{% if song.title.errors %}
                 <div class="error">
                         {% for error in song.title.errors %}
                                 <span>{{ error }}</span>
                         {% endfor %}
                 </div>
+                
                 {% endif %}
+                
 		<small>{{ song.artist}}</small>
 		{% if song.artist.errors %}
                 <div class="error">

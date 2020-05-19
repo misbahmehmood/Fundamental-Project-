@@ -4,20 +4,23 @@
 <h1>Your Playlist</h1>
 
 <form  method= 'POST' action= ''>
-    
+    <p>
         {{ form.hidden_tag() }}
-        {{ form.title.label }}
+        {{ form.title.label }}<br>
         {{ form.title }}
-    <br>
-        {{ form.artist.label }}
+    </p>
+    <p>
+        {{ form.artist.label }}<br>
         {{ form.artist }}
-    <br>
-        {{ form.genre.label }}
+    </p>
+    <p>
+        {{ form.genre.label }}<br>
         {{ form.genre }}
-    <br>
-        {{ form.instrument.label }}
+    </p>
+    <p>
+        {{ form.instrument.label }} <br>
         {{ form.instrument }}
-    <br>
+    </p>
         {{ form.submit }}
 </form>
 
