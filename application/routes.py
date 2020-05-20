@@ -4,7 +4,6 @@ from application.models import Personality, Songs
 from application.forms import QuestionForm, SongForm, UpdateForm
 
 
-
 @app.route('/')
 @app.route('/home')
 def home():
@@ -33,7 +32,6 @@ def quiz():
     return render_template('quiz.html', title='Quiz', form=dataform)
 
 @app.route('/personality', methods=['GET', 'POST'])
-    
 def personality():
         form=SongForm()
         if form.validate_on_submit():
@@ -41,8 +39,8 @@ def personality():
                 title=form.title.data,
                 artist=form.artist.data,
                 genre=form.genre.data,
-                instrument=form.instrument.data
-                #personality=QuestionForm.personality_type
+                instrument=form.instrument.data,
+                
             )
             db.session.add(songData)
             db.session.commit()

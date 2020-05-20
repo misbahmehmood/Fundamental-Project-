@@ -11,7 +11,7 @@ class QuestionForm(FlaskForm):
         Length(min=3, max=20)
         ])
 
-    personality_type= StringField ('Extrovert/Introvert',
+    personality_type= StringField ('Introvert/Extravert',
     validators=[DataRequired()
     ])
 

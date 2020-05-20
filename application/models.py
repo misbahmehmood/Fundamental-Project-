@@ -17,7 +17,7 @@ class Songs(db.Model):
     artist=db.Column(db.String(30), nullable=False)
     genre=db.Column(db.String(20), nullable=False)
     instrument=db.Column(db.String(20), nullable=False)
-    personality_id=db.Column(db.Integer, db.ForeignKey('personality.id'), nullable=False)
+    personality_id=db.Column(db.Integer, db.ForeignKey('personality.id'))
     def __repr__(self):
         return ''.join([
             'Song Title: ', self.title, '\r\n',
