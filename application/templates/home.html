@@ -28,7 +28,7 @@
                 </div>
                 {% endif %}
 		<br>
-		<small></small>{{ song.genre }}</small>
+		<small>{{ song.genre }}</small>
 		{% if song.genre.errors %}
                 <div class="error">
                         {% for error in song.genre.errors %}
@@ -47,7 +47,7 @@
                 {% endif %} 
                 <br>
                 <a href=/delete/{{song.id}}>Delete</a>
-                <a href=' '>Update</a>
+                <a href='/update/{{song.id}}'>Update</a>
 		
          
 		

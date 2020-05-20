@@ -53,17 +53,21 @@ def extraversion():
             print(form.errors)
         return render_template('extraversion.html', title='Extraversion Songs', form=form)
 
-@app.route('/extraversion/update', methods=['GET', 'POST'])
-def update():
+@app.route('/update/<int:id>', methods=['GET', 'POST'])
+def update(id):
+    to_update= Songs.query.get_or_404(id)
     form=UpdateForm()
-    if form.validate_on_submit():
-            title=form.title.data,
-            artist=form.artist.data,
-            genre=form.genre.data,
-            instrument=form.instrument.data
+    if request.method == 'POST':
+        
+        if form.validate_on_submit():
+            to_update.title=form.title.data,
+            to_update.artist=form.artist.data,
+            to_update.genre=form.genre.data,
+            to_update.instrument=form.instrument.data
             db.session.commit()
             return redirect (url_for('home'))
-    return render_template('extraversion_new.html', title='Update', form=form)
+
+    return render_template('extraversion_new.html', title='Update', form=form, update=to_update)
 
 
 

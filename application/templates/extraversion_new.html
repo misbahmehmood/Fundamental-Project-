@@ -1,25 +1,22 @@
 {% extends 'layout.html' %}
   
 {% block body_content %}
-<h1>Your Playlist</h1>
+<h1>Update your Song</h1>
 
-<form  method= 'POST' action= ''>
-    <p>
+<form  method= 'POST' action= '/update/{{update.id}}'>
         {{ form.hidden_tag() }}
-        {{ form.title.label }}<br>
-        {{ form.title }}
+    <p>
+        Song Title: <br><input type='text' name='title' id='title' value='{{update.title}}'>
+
     </p>
     <p>
-        {{ form.artist.label }}<br>
-        {{ form.artist }}
+        Artist: <br><input type='text' name='artist' id='artist' value='{{update.artist}}'>
     </p>
     <p>
-        {{ form.genre.label }}<br>
-        {{ form.genre }}
+        Genre: <br><input type='text' name='genre' id='genre' value='{{update.genre}}'>
     </p>
     <p>
-        {{ form.instrument.label }} <br>
-        {{ form.instrument }}
+        Instrument: <br><input type='text' name='instrument' id='instrument' value='{{update.instrument}}'>
     </p>
         {{ form.submit }}
 </form>
