@@ -27,16 +27,14 @@ def quiz():
         db.session.add(data)
         db.session.commit()
         
-        if dataform.personality_type.data=='Introvert':
-            return redirect(url_for('introversion'))
-        elif dataform.personality_type.data=='Extravert':
-            return redirect(url_for('extraversion'))
+        return redirect(url_for('personality'))
+       
 
     return render_template('quiz.html', title='Quiz', form=dataform)
 
-@app.route('/extraversion', methods=['GET', 'POST'])
+@app.route('/personality', methods=['GET', 'POST'])
     
-def extraversion():
+def personality():
         form=SongForm()
         if form.validate_on_submit():
             songData=Songs(
@@ -51,7 +49,7 @@ def extraversion():
             return redirect(url_for('home'))
         else:
             print(form.errors)
-        return render_template('extraversion.html', title='Extraversion Songs', form=form)
+        return render_template('personality.html', title='Songs', form=form)
 
 @app.route('/update/<int:id>', methods=['GET', 'POST'])
 def update(id):
@@ -67,7 +65,7 @@ def update(id):
             db.session.commit()
             return redirect (url_for('home'))
 
-    return render_template('extraversion_new.html', title='Update', form=form, update=to_update)
+    return render_template('personality_new.html', title='Update', form=form, update=to_update)
 
 
 
@@ -81,8 +79,3 @@ def delete(id):
     return redirect(url_for('home'))
     
 
-
-@app.route('/introversion')
-
-def introversion():
-    return render_template('introversion.html', title='Introversion Songs')
