@@ -1,10 +1,10 @@
 # Contents
 * [Introduction](#Introduction)
 * [The Brief](#The Brief)
-* [Project Tracking] (#Project Tracking)
+* ['Project Tracking'](#Project Tracking)
 * [Risk Assessment] (#Risk Assessment)
-* [Architecture] 
-* Testing
+* [Architecture] (#Architecture)
+* [Testing](#Testing)
 
 # Introduction
 
