@@ -3,8 +3,6 @@ from wtforms import StringField, SubmitField, SelectField
 from wtforms.validators import DataRequired, Length, Regexp
 
 
-def personality_query():
-    return Personality.query
     
 class QuestionForm(FlaskForm):
     name= StringField ('Enter your full name', 
@@ -34,3 +32,19 @@ class SongForm(FlaskForm):
     ])
 
     submit=SubmitField('Post')
+
+class UpdateForm(FlaskForm):
+    title= StringField('Song Title',
+        validators=[DataRequired(),
+    ])
+    artist=StringField('Artist',
+        validators=[DataRequired()
+    ])
+    genre=StringField('Genre',
+        validators=[DataRequired()
+    ])
+    instrument=StringField('Instrument',
+        validators=[DataRequired()
+    ])
+
+    submit=SubmitField('Update')

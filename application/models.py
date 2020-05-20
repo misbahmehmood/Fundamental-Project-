@@ -4,7 +4,7 @@ class Personality(db.Model):
     id=db.Column(db.Integer, primary_key=True)
     name=db.Column(db.String(20))
     personality_type=db.Column(db.String(9))
-    songs= db.relationship('Songs', backref='personality')
+    songs= db.relationship('Songs', backref='personality', lazy=True)
     def __repr__(self):
         return ''.join([
              'Personality Type: ', self.personality_type, '\r\n',
@@ -17,7 +17,7 @@ class Songs(db.Model):
     artist=db.Column(db.String(30), nullable=False)
     genre=db.Column(db.String(20), nullable=False)
     instrument=db.Column(db.String(20), nullable=False)
-    personality_id=db.Column(db.Integer, db.ForeignKey('personality.id'))
+    personality_id=db.Column(db.Integer, db.ForeignKey('personality.id'), nullable=False)
     def __repr__(self):
         return ''.join([
             'Song Title: ', self.title, '\r\n',
