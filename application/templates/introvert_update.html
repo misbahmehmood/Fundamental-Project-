@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+  
+{% block body_content %}
+<h1>Update your Song</h1>
+
+<form  method= 'POST' action= '/introvert/update/{{update.id}}'>
+        {{ form.hidden_tag() }}
+    <p>
+        Song Title: <br><input type='text' name='title' id='title' value='{{update.title}}'>
+
+    </p>
+    <p>
+        Artist: <br><input type='text' name='artist' id='artist' value='{{update.artist}}'>
+    </p>
+    <p>
+        Genre: <br><input type='text' name='genre' id='genre' value='{{update.genre}}'>
+    </p>
+    <p>
+        Instrument: <br><input type='text' name='instrument' id='instrument' value='{{update.instrument}}'>
+    </p>
+        {{ form.submit }}
+</form>
+
+{% endblock %}
