@@ -4,11 +4,8 @@
 <h1>Find the right songs for you</h1>   
     <form  method= 'POST' action= ''>
         {{ form.hidden_tag() }}
-        {{ form.name.label }}<br>
-        {{ form.name }}
-        <br>
-        {{ form.personality_type.label }}<br>
-        {{ form.personality_type }}
+        {{ form.options.label }}<br>
+        {{ form.options }}
         <br>
         {{ form.submit }}
     </form>

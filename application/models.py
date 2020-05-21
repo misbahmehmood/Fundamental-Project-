@@ -2,13 +2,11 @@ from application import db
 
 class Personality(db.Model):
     id=db.Column(db.Integer, primary_key=True)
-    name=db.Column(db.String(20))
     personality_type=db.Column(db.String(9))
-    songs= db.relationship('Songs', backref='personality', lazy=True)
+    songs= db.relationship('Songs', backref='personality', lazy= 'dynamic')
     def __repr__(self):
         return ''.join([
-             'Personality Type: ', self.personality_type, '\r\n',
-             'Name: ', self.name
+             'Personality Type: ', self.personality_type
             ])
 
 class Songs(db.Model):

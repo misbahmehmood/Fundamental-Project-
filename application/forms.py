@@ -1,21 +1,20 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, SelectField
 from wtforms.validators import DataRequired, Length, Regexp
+from wtforms.ext.sqlalchemy.fields import QuerySelectField 
+from application.models import Personality
+
+def personality_query():
+    return Personality.query.all()
 
 
-    
-class QuestionForm(FlaskForm):
-    name= StringField ('Enter your full name', 
-    validators= [
-        DataRequired(),
-        Length(min=3, max=20)
-        ])
 
-    personality_type= StringField ('Introvert/Extravert',
-    validators=[DataRequired()
-    ])
+class PersonalityForm(FlaskForm):
+
+    options= SelectField('Personality', choices=['Introvert','Extravert'])
 
     submit=SubmitField('Save')
+
 
 class SongForm(FlaskForm):
     title= StringField('Song Title',

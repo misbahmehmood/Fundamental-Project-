@@ -1,7 +1,7 @@
 from flask import render_template, request, redirect, url_for
 from application import app, db
 from application.models import Personality, Songs
-from application.forms import QuestionForm, SongForm, UpdateForm
+from application.forms import PersonalityForm, SongForm, UpdateForm
 
 
 @app.route('/')
@@ -17,16 +17,21 @@ def about():
 @app.route('/quiz', methods=['GET', 'POST'])
 
 def quiz():
-    dataform=QuestionForm()
-    if dataform.validate_on_submit():
-        data= Personality(
-            name=dataform.name.data,
-            personality_type=dataform.personality_type.data
-        )
-        db.session.add(data)
-        db.session.commit()
+    dataform=PersonalityForm()
+    print('------------------------------', dataform.validate_on_submit(), '--------------------------------------')
+    if request.method == 'POST':
+        print('------------------------------', dataform.options.data, '--------------------------------------')
+        if dataform.options.data == 'Extravert':
+            return redirect(url_for('personality'))
+
         
-        return redirect(url_for('personality'))
+    '''data= Personality(
+        personality_type=dataform.options.data
+    )
+    db.session.add(data)
+    db.session.commit()'''
+        
+    
        
 
     return render_template('quiz.html', title='Quiz', form=dataform)
@@ -39,8 +44,7 @@ def personality():
                 title=form.title.data,
                 artist=form.artist.data,
                 genre=form.genre.data,
-                instrument=form.instrument.data,
-                
+                instrument=form.instrument.data
             )
             db.session.add(songData)
             db.session.commit()
