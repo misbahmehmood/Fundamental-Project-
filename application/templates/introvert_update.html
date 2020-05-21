@@ -1,6 +1,9 @@
 {% extends 'layout.html' %}
   
 {% block body_content %}
+<nav>
+    <a href="{{ url_for('introvert_add') }}">See your Songs</a>
+</nav>
 <h1>Update your Song</h1>
 
 <form  method= 'POST' action= '/introvert/update/{{update.id}}'>

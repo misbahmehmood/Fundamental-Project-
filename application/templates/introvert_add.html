@@ -3,6 +3,9 @@
 
 
 {% block body_content %}
+<nav>
+        <a href="{{ url_for('introvert') }}">Add more Songs</a>
+        
 {% for song in songs %}
                 <hr>
 		<h4>{{ song.title }}</h4>

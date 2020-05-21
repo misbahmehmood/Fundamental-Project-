@@ -1,6 +1,9 @@
 {% extends 'layout.html' %}
   
 {% block body_content %}
+<nav>
+    <a href="{{ url_for('extravert_read') }}">See your Songs</a>
+</nav>
 <h1>Your Playlist</h1>
 
 <form  method= 'POST' action= ''>

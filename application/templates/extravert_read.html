@@ -2,6 +2,9 @@
 
 
 {% block body_content %}
+<nav>
+    <a href="{{ url_for('extravert') }}">Add more</a>
+</nav>
     {% for song in songs %}
             <hr>
     <h4>{{ song.title }}</h4>

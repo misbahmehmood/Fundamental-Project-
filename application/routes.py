@@ -63,7 +63,14 @@ def update(id):
             to_update.genre=form.genre.data,
             to_update.instrument=form.instrument.data
             db.session.commit()
-            return redirect (url_for('home'))
+            return redirect (url_for('extravert_read'))
+        else:
+            print(form.errors)
+    else:
+        form.title.data=to_update.title
+        form.artist.data=to_update.artist
+        form.genre.data=to_update.genre
+        form.instrument.data=to_update.instrument
 
     return render_template('extravert_new.html', title='Update', form=form, update=to_update)
 
@@ -73,7 +80,7 @@ def delete(id):
     
     db.session.delete(to_delete)
     db.session.commit()
-    return redirect(url_for('home'))
+    return redirect(url_for('extravert_read'))
     
 
 @app.route('/introvert', methods=['GET', 'POST'])
@@ -111,6 +118,13 @@ def introvert_update(id):
             to_update.instrument=form.instrument.data
             db.session.commit()
             return redirect (url_for('introvert_add'))
+        else:
+            print(form.errors)
+    else:
+        form.title.data=to_update.title
+        form.artist.data=to_update.artist
+        form.genre.data=to_update.genre
+        form.instrument.data=to_update.instrument
 
     return render_template('introvert_update.html', title='Update', form=form, update=to_update)
 
