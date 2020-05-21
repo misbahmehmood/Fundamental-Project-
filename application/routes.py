@@ -7,8 +7,8 @@ from application.forms import PersonalityForm, SongForm, UpdateForm
 @app.route('/')
 @app.route('/home')
 def home():
-    postData=Songs.query.all()
-    return render_template('home.html', title='Home Page', songs=postData)
+    
+    return render_template('home.html', title='Home Page')
 
 @app.route('/about')
 def about():
@@ -18,7 +18,9 @@ def about():
 
 def quiz():
     dataform=PersonalityForm()
+    personality_id=dataform.options.data
     if request.method == 'POST':
+        
         if dataform.options.data == 'Extravert':
             return redirect(url_for('extravert'))
         else:
@@ -34,14 +36,21 @@ def extravert():
                 title=form.title.data,
                 artist=form.artist.data,
                 genre=form.genre.data,
-                instrument=form.instrument.data
+                instrument=form.instrument.data,
+                personality_id=1
             )
             db.session.add(songData)
             db.session.commit()
-            return redirect(url_for('home'))
+            return redirect(url_for('extravert_read'))
         else:
             print(form.errors)
         return render_template('extravert.html', title='Songs', form=form)
+
+@app.route('/extravert/read')
+def extravert_read():
+    postData=Songs.query.filter_by(personality_id=1).all()
+    return render_template('extravert_read.html', title='Your Songs', songs=postData)
+
 @app.route('/update/<int:id>', methods=['GET', 'POST'])
 def update(id):
     to_update= Songs.query.get_or_404(id)
@@ -75,8 +84,9 @@ def introvert():
                 title=form.title.data,
                 artist=form.artist.data,
                 genre=form.genre.data,
-                instrument=form.instrument.data
-            )
+                instrument=form.instrument.data,
+                personality_id=2
+                )
             db.session.add(songData)
             db.session.commit()
             return redirect(url_for('introvert_add'))
@@ -85,8 +95,8 @@ def introvert():
         return render_template('introvert.html', title='Your Songs', form=form)
 @app.route('/introvert/add')
 def introvert_add():
-    postData=Songs.query.all()
-    return render_template('introvert_add', title='See your Songs', songs=postData)
+    postData=Songs.query.filter_by(personality_id=2).all()
+    return render_template('introvert_add.html', title='See your Songs', songs=postData)
 
 @app.route('/introvert/update/<int:id>', methods=['GET', 'POST'])
 def introvert_update(id):

@@ -1,12 +1,8 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, SelectField
-from wtforms.validators import DataRequired, Length, Regexp
+from wtforms.validators import DataRequired, Length
 from wtforms.ext.sqlalchemy.fields import QuerySelectField 
 from application.models import Personality
-
-def personality_query():
-    return Personality.query.all()
-
 
 
 class PersonalityForm(FlaskForm):

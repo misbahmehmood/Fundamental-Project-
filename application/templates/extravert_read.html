@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+
+
+{% block body_content %}
+    {% for song in songs %}
+            <hr>
+    <h4>{{ song.title }}</h4>
+    {% if song.title.errors %}
+            <div class="error">
+                    {% for error in song.title.errors %}
+                            <span>{{ error }}</span>
+                    {% endfor %}
+            </div>
+            
+            {% endif %}
+            
+    <small>{{ song.artist}}</small>
+    {% if song.artist.errors %}
+            <div class="error">
+                    {% for error in song.artist.errors %}
+                            <span>{{ error }}</span>
+                    {% endfor %}
+            </div>
+            {% endif %}
+    <br>
+    <small>{{ song.genre }}</small>
+    {% if song.genre.errors %}
+            <div class="error">
+                    {% for error in song.genre.errors %}
+                            <span>{{ error }}</span>
+                    {% endfor %}
+            </div>
+            {% endif %}
+    <br>
+    <small>{{ song.instrument }}</small>
+    {% if song.instrument.errors %}
+            <div class="error">
+                    {% for error in song.instrument.errors %}
+                            <span>{{ error }}</span>
+                    {% endfor %}
+            </div>
+            {% endif %} 
+            <br>
+            <a href=/delete/{{song.id}}>Delete</a>
+            <a href='/update/{{song.id}}'>Update</a>
+    
+     
+    
+</div>
+{% endfor %}
+{% endblock %}
