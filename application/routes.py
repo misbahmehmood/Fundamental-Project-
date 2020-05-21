@@ -17,7 +17,6 @@ def about():
 @app.route('/quiz', methods=['GET', 'POST'])
 
 def quiz():
-    dataform=PersonalityForm()
     personality_id=dataform.options.data
     if request.method == 'POST':
         
