@@ -35,7 +35,7 @@ class TestViews(TestBase):
         response = self.client.get(url_for('home'))
         self.assertEqual(response.status_code, 200)
     def test_aboutpage_view(self):
-        response = self.client.get(url_for('home'))
+        response = self.client.get(url_for('about'))
         self.assertEqual(response.status_code, 200)
     def test_extravert_view(self):
         response = self.client.get(url_for('extravert'))
@@ -45,38 +45,63 @@ class TestViews(TestBase):
         self.assertEqual(response.status_code, 200)
 
 class TestPosts(TestBase):
-    def test_redirect_option1(self):
-        response= self.client.post('/quiz',
-        data=dict(options='Extravert'),
-        follow_redirects=True
-        )
-    def test_redirect_option2(self):
-        response= self.client.post('/quiz',
-        data=dict(options='Introvert'),
-        follow_redirects=True
-        )
+    def test_redirect(self):
+        with self.client:
+            response=self.client.post('quiz',
+                data=dict(options='Extravert'),
+                follow_redirects=True
+            )
+            self.assertIn(b'+Add a Song', response.data)
+
     def test_adding_post(self):
-        response= self.client.post('/extravert',
+        response=self.client.post('/extravert',
         data=dict(title='test title',
-            artist= 'test artist',
-            genre = 'test genre',
-            instrument = 'test instrument'),
-        follow_redirects=True)
-        self.assertIn(b'test title', response.data) 
-    def test_adding_post2(self):
-        response= self.client.post('/introvert',
-        data=dict(title='test title',
-                artist= 'test artist',
-                genre = 'test genre',
-                instrument = 'test instrument'),
+            artist='test artist',
+            genre= 'test genre',
+            instrument='test instrument',
+            link= 'test link'),
             follow_redirects=True)
-        self.assertIn(b'test title', response.data) 
+        self.assertIn(b'test title', response.data)
+    '''with self.client:
+            response= self.client.get(url_for('extravert/read'),
+        self.assertEqual(response.status_code, 200))'''
+    '''with self.client:
+            response=self.client.get(url_for())
+            self.assertEqual(response.status_code, 200)'''
+        
+    
+
+    '''with self.client:
+            response=self.client.get('extravert/read')
+            self.assertEqual(response.status_code, 200)
+        with self.client:
+            response=self.client.get (url_for('update', id=1))
+            self.assertEqual(response.status_code, 200)
+        with self.client:
+            response= self.client.post('extravert',
+            data=dict(title='test title',
+                artist= 'test artist',
+                genre = 'test new genre',
+                instrument = 'test instrument',
+                link = 'link'),
+            follow_redirects=True)
+            self.assertIn(b'test new genre', response.data)'''
+
+
         
 class TestDelete(TestBase):
     def delete_post(self):
-        ids = [a.id for a in Songs]
-        assert Songs.count() == 2
-        Songs.delete(ids[0])
-        assert Songs.count() == 1
+        response=self.client.post('/extravert',
+        data=dict(title='test title',
+            artist='test artist',
+            genre= 'test genre',
+            instrument='test instrument',
+            link= 'test link'),
+        follow_redirects=True)
+        self.assertIn(b'test title', response.data)
+        with self.client:
+            response= self.client.get(url_for('delete', id=1))
+            follow_redirects=True
+            self.assertEqual(Songs.query.count(),0)
 
 
