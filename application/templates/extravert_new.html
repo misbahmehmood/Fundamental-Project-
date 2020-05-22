@@ -21,6 +21,12 @@
     <p>
         Instrument: <br><input type='text' name='instrument' id='instrument' value='{{update.instrument}}'>
     </p>
+        {% if update.link %}
+        Link: <br><input type='text' name='link' id='link' value= {{update.link}}>
+        {% else %}
+        Link: <br><input type='text' name='link' id='link' value= 'link not supplied'}>
+        {% endif %} 
+    <br>
         {{ form.submit }}
 </form>
 

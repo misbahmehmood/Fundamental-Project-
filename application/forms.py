@@ -25,7 +25,8 @@ class SongForm(FlaskForm):
     instrument=StringField('Instrument',
         validators=[DataRequired()
     ])
-
+    link=StringField('Link')
+    
     submit=SubmitField('Post')
 
 class UpdateForm(FlaskForm):
@@ -41,5 +42,8 @@ class UpdateForm(FlaskForm):
     instrument=StringField('Instrument',
         validators=[DataRequired()
     ])
+    link=StringField('Link',
+        validators=[DataRequired()
+        ])
 
     submit=SubmitField('Update')

@@ -9,6 +9,13 @@
 <br>
 <h2>Your Songs</h2>
 <br>
+{% with messages = get_flashed_messages() %}
+                {% if messages %}
+                        {% for message in messages %}
+                                {{ message }}
+                        {% endfor %}
+                {% endif %}
+{% endwith %}
 {% for song in songs %}
         <hr>
 	<h4>{{ song.title }}</h4>
@@ -47,6 +54,24 @@
                         {% endfor %}
                 </div>
         {% endif %} 
+        
+                <br>
+                {% if song.link %}
+                        <small>Link: {{ song.link }}</small>
+                        {% if song.link.errors %}
+                                <div class="error">
+                                {% for error in song.link.errors %}
+                                        <span>{{ error }}</span>
+                                {% endfor %}
+                        {% endif %}
+                                </div>
+                {% else %}
+                        <small>Link: 'Not Supplied'</small>
+                {% endif %} 
+                
+                <br>
+                <br>
+                <small>Date: {{ song.date }}</small>
                 <br>
                 <a href='/introvert/delete/{{song.id}}'>Delete</a>
                 <a href='/introvert/update/{{song.id}}'>Update</a>

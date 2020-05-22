@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect, url_for
+from flask import flash, render_template, request, redirect, url_for
 from application import app, db
 from application.models import Personality, Songs
 from application.forms import PersonalityForm, SongForm, UpdateForm
@@ -36,6 +36,7 @@ def extravert():
                 artist=form.artist.data,
                 genre=form.genre.data,
                 instrument=form.instrument.data,
+                link=form.link.data,
                 personality_id=1
             )
             db.session.add(songData)
@@ -60,7 +61,8 @@ def update(id):
             to_update.title=form.title.data,
             to_update.artist=form.artist.data,
             to_update.genre=form.genre.data,
-            to_update.instrument=form.instrument.data
+            to_update.instrument=form.instrument.data,
+            to_update.link=form.link.data
             db.session.commit()
             return redirect (url_for('extravert_read'))
         else:
@@ -70,13 +72,14 @@ def update(id):
         form.artist.data=to_update.artist
         form.genre.data=to_update.genre
         form.instrument.data=to_update.instrument
+        form.link.data=to_update.link
 
     return render_template('extravert_new.html', title='Update', form=form, update=to_update)
 
 @app.route('/delete/<int:id>')
 def delete(id):
     to_delete= Songs.query.get_or_404(id)
-    
+    flash('Successfully deleted')
     db.session.delete(to_delete)
     db.session.commit()
     return redirect(url_for('extravert_read'))
@@ -91,6 +94,7 @@ def introvert():
                 artist=form.artist.data,
                 genre=form.genre.data,
                 instrument=form.instrument.data,
+                link=form.link.data,
                 personality_id=2
                 )
             db.session.add(songData)
@@ -114,7 +118,8 @@ def introvert_update(id):
             to_update.title=form.title.data,
             to_update.artist=form.artist.data,
             to_update.genre=form.genre.data,
-            to_update.instrument=form.instrument.data
+            to_update.instrument=form.instrument.data,
+            to_update.link=form.link.data
             db.session.commit()
             return redirect (url_for('introvert_add'))
         else:
@@ -124,13 +129,15 @@ def introvert_update(id):
         form.artist.data=to_update.artist
         form.genre.data=to_update.genre
         form.instrument.data=to_update.instrument
+        form.link.data=to_update.link
 
     return render_template('introvert_update.html', title='Update', form=form, update=to_update)
 
 @app.route('/introvert/delete/<int:id>')
 def introvert_delete(id):
     to_delete= Songs.query.get_or_404(id)
-    
+    flash('Successfully deleted')
     db.session.delete(to_delete)
     db.session.commit()
+    
     return redirect(url_for('introvert_add'))

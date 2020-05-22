@@ -2,6 +2,10 @@
   
 {% block body_content %}
 <br>
+<nav>
+    <a href="{{ url_for('introvert_add') }}">See your Songs</a>
+</nav>
+<br>
 <h2>+Add a Song</h2>
 <br>
     
@@ -22,6 +26,10 @@
         <p>
             {{ form.instrument.label }} <br>
             {{ form.instrument }}
+        </p>
+        <p>
+            {{ form.link.label }} <br>
+            {{ form.link }}
         </p>
             {{ form.submit }}
     </form>
