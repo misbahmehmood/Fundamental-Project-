@@ -5,51 +5,51 @@
 {% block body_content %}
 <nav>
         <a href="{{ url_for('introvert') }}">Add more Songs</a>
-        
+</nav>
+<br>
+<h2>Your Songs</h2>
+<br>
 {% for song in songs %}
-                <hr>
-		<h4>{{ song.title }}</h4>
-		{% if song.title.errors %}
+        <hr>
+	<h4>{{ song.title }}</h4>
+	{% if song.title.errors %}
                 <div class="error">
                         {% for error in song.title.errors %}
                                 <span>{{ error }}</span>
                         {% endfor %}
                 </div>
                 
-                {% endif %}
+        {% endif %}
                 
-		<small>{{ song.artist}}</small>
-		{% if song.artist.errors %}
+	<small>By:{{ song.artist }}</small>
+	{% if song.artist.errors %}
                 <div class="error">
                         {% for error in song.artist.errors %}
                                 <span>{{ error }}</span>
                         {% endfor %}
                 </div>
-                {% endif %}
+        {% endif %}
 		<br>
-		<small>{{ song.genre }}</small>
-		{% if song.genre.errors %}
+	<small>Genre: {{ song.genre }}</small>
+	{% if song.genre.errors %}
                 <div class="error">
                         {% for error in song.genre.errors %}
                                 <span>{{ error }}</span>
                         {% endfor %}
                 </div>
-                {% endif %}
+        {% endif %}
 		<br>
-		<small>{{ song.instrument }}</small>
-		{% if song.instrument.errors %}
+	<small>Instrument: {{ song.instrument }}</small>
+	{% if song.instrument.errors %}
                 <div class="error">
                         {% for error in song.instrument.errors %}
                                 <span>{{ error }}</span>
                         {% endfor %}
                 </div>
-                {% endif %} 
+        {% endif %} 
                 <br>
                 <a href='/introvert/delete/{{song.id}}'>Delete</a>
                 <a href='/introvert/update/{{song.id}}'>Update</a>
 		
-         
-		
-	</div>
-	{% endfor %}
+{% endfor %}
 {% endblock %}

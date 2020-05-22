@@ -1,27 +1,29 @@
 {% extends 'layout.html' %}
   
 {% block body_content %}
-<h1>Your Playlist</h1>
-
-<form  method= 'POST' action= ''>
-    <p>
-        {{ form.hidden_tag() }}
-        {{ form.title.label }}<br>
-        {{ form.title }}
-    </p>
-    <p>
-        {{ form.artist.label }}<br>
-        {{ form.artist }}
-    </p>
-    <p>
-        {{ form.genre.label }}<br>
-        {{ form.genre }}
-    </p>
-    <p>
-        {{ form.instrument.label }} <br>
-        {{ form.instrument }}
-    </p>
-        {{ form.submit }}
-</form>
-
-{% endblock %}
+<br>
+<h2>+Add a Song</h2>
+<br>
+    
+    <form  method= 'POST' action= ''>
+        <p>
+            {{ form.hidden_tag() }}
+            {{ form.title.label }}<br>
+            {{ form.title }}
+        </p>
+        <p>
+            {{ form.artist.label }}<br>
+            {{ form.artist }}
+        </p>
+        <p>
+            {{ form.genre.label }}<br>
+            {{ form.genre }}
+        </p>
+        <p>
+            {{ form.instrument.label }} <br>
+            {{ form.instrument }}
+        </p>
+            {{ form.submit }}
+    </form>
+    
+    {% endblock %}
