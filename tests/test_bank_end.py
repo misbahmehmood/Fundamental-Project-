@@ -43,6 +43,9 @@ class TestViews(TestBase):
     def test_introvert_view(self):
         response = self.client.get(url_for('introvert'))
         self.assertEqual(response.status_code, 200)
+    def test_read_view(self):
+        response=self.client.get(url_for('extravert_read'))
+        self.assertEqual(response.status_code, 200)
 
 class TestPosts(TestBase):
     def test_redirect(self):
@@ -52,28 +55,19 @@ class TestPosts(TestBase):
                 follow_redirects=True
             )
             self.assertIn(b'+Add a Song', response.data)
-
-class Testdef test_adding_post(self):
-        response=self.client.post('/extravert',
-        data=dict(title='test title',
-            artist='test artist',
-            genre= 'test genre',
-            instrument='test instrument',
-            link= 'test link'),
-            follow_redirects=True)
-        self.assertIn(b'test title', response.data)
-'''with self.client:
+    def test_adding_post(self):
+        with self.client:
+            response=self.client.post('/extravert',
+            data=dict(title='test title',
+                artist='test artist',
+                genre= 'test genre',
+                instrument='test instrument',
+                link= 'test link'),
+                follow_redirects=True)
+            self.assertIn(b'test title', response.data)
+        with self.client:
             response= self.client.get(url_for('extravert/read'),
-        self.assertEqual(response.status_code, 200))'''
-'''with self.client:
-            response=self.client.get(url_for())
-            self.assertEqual(response.status_code, 200)'''
-        
-    
-
-'''with self.client:
-            response=self.client.get('extravert/read')
-            self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 200))
         with self.client:
             response=self.client.get (url_for('update', id=1))
             self.assertEqual(response.status_code, 200)
@@ -85,7 +79,7 @@ class Testdef test_adding_post(self):
                 instrument = 'test instrument',
                 link = 'link'),
             follow_redirects=True)
-            self.assertIn(b'test new genre', response.data)'''
+            self.assertIn(b'test new genre', response.data)
 
 
         
