@@ -53,7 +53,7 @@ class TestPosts(TestBase):
             )
             self.assertIn(b'+Add a Song', response.data)
 
-    def test_adding_post(self):
+class Testdef test_adding_post(self):
         response=self.client.post('/extravert',
         data=dict(title='test title',
             artist='test artist',
@@ -62,16 +62,16 @@ class TestPosts(TestBase):
             link= 'test link'),
             follow_redirects=True)
         self.assertIn(b'test title', response.data)
-    '''with self.client:
+'''with self.client:
             response= self.client.get(url_for('extravert/read'),
         self.assertEqual(response.status_code, 200))'''
-    '''with self.client:
+'''with self.client:
             response=self.client.get(url_for())
             self.assertEqual(response.status_code, 200)'''
         
     
 
-    '''with self.client:
+'''with self.client:
             response=self.client.get('extravert/read')
             self.assertEqual(response.status_code, 200)
         with self.client:
