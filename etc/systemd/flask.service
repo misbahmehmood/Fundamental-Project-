@@ -1,0 +1,9 @@
+[Unit]
+Description=fundamental_project
+
+[Service]
+User=jenkins
+ExecStart=/var/lib/jenkins/workspace/project_freestyle/script/installation.sh
+
+[Install]
+WantedBy=multi-user.target

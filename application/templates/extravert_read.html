@@ -54,7 +54,8 @@
         {% endif %} 
         <br>
         {% if song.link %}
-                        <small>Link: {{ song.link }}</small>
+                        <small>Link:</small><br>
+                        <small><textarea> {{ song.link }}</textarea></small>
                         {% if song.link.errors %}
                                 <div class="error">
                                 {% for error in song.link.errors %}

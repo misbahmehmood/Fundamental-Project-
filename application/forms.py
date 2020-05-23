@@ -28,6 +28,14 @@ class SongForm(FlaskForm):
     link=StringField('Link')
     
     submit=SubmitField('Post')
+    
+    def link_url(lst):
+        videos=[]
+        for link in lst:
+            video= 'https://youtube.com/embed/' + link
+            videos.append(video)
+        return videos
+
 
 class UpdateForm(FlaskForm):
     title= StringField('Song Title',

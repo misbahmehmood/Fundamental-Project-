@@ -51,6 +51,7 @@ def extravert_read():
     postData=Songs.query.filter_by(personality_id=1).all()
     return render_template('extravert_read.html', title='Your Songs', songs=postData)
 
+
 @app.route('/update/<int:id>', methods=['GET', 'POST'])
 def update(id):
     to_update= Songs.query.get_or_404(id)
