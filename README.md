@@ -28,6 +28,8 @@ Below is the initial ERDiagram making use of the MoSCoW principle, ensuring to f
 ## Final Entitiy Relationship Diagram
 ![image](https://raw.githubusercontent.com/misbahmehmood/fundamental_project/images/images/Final%20ERD.jpg)
 
+Initially I wanted to include the playlist table so that songs could be saved into a playlist for ease of use. However, due to time constraints, I decided to only use 2 tables linked with a one to many relationship. 
+
 # Project Tracking
 
 # Risk Assessment
