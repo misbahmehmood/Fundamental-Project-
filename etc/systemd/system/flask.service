@@ -1,5 +1,5 @@
 [Unit]
-Description=fundamental_project
+Description=Sfia1 Project
 
 [Service]
 User=jenkins
