@@ -17,7 +17,13 @@ My project is an application designed to use different types of instrumental mus
 
 # Technology Used
 ## Entitiy Relationship Diagram
-![image](home/Misbah/fundamental_project/ERDiagram-(2).jpg)
+ERDiagrams were used to help organise the database.
+
+Below is the initial ERDiagram making use of the MoSCoW principle making sure to focus on areas that should be in the application. 
+
+![image](https://raw.githubusercontent.com/misbahmehmood/fundamental_project/images/ERDiagram%20(2).jpg)
+
+
 
 # Project Tracking
 
