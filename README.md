@@ -21,11 +21,12 @@ My project is an application designed to use different types of instrumental mus
 ## Initial Entitiy Relationship Diagram
 ERDiagrams were used to help organise the database.
 
-Below is the initial ERDiagram making use of the MoSCoW principle, ensuring to focus on areas that should be in the application. 
+Below is the initial ERDiagram making use of the MoSCoW principle, ensuring to focus on areas that should be in the application with the help of the user stories. 
 
-![image](https://raw.githubusercontent.com/misbahmehmood/fundamental_project/images/ERDiagram%20(2).jpg)
+![image](https://raw.githubusercontent.com/misbahmehmood/fundamental_project/images/images/ERDiagram%20(2).jpg)
 
 ## Final Entitiy Relationship Diagram
+![image](https://raw.githubusercontent.com/misbahmehmood/fundamental_project/images/images/Final%20ERD.jpg)
 
 # Project Tracking
 
