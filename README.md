@@ -2,6 +2,8 @@
 * [Introduction](#Introduction)
 * [The Brief](#The-Brief)
 * [Technologies Used](#Technology-Used)
+    * [Initial ERDiagram]( Entitiy-Relationship-Diagram)
+    * [Final ERDiagram](Final-Entitiy-Relationship-Diagram)
 * [Project Tracking](#Project-Tracking)
 * [Risk Assessment](#Risk-Assessment)
 * [Testing](#Testing)
@@ -16,14 +18,14 @@ My project is an application designed to use different types of instrumental mus
 
 
 # Technology Used
-## Entitiy Relationship Diagram
+## Initial Entitiy Relationship Diagram
 ERDiagrams were used to help organise the database.
 
-Below is the initial ERDiagram making use of the MoSCoW principle making sure to focus on areas that should be in the application. 
+Below is the initial ERDiagram making use of the MoSCoW principle, ensuring to focus on areas that should be in the application. 
 
 ![image](https://raw.githubusercontent.com/misbahmehmood/fundamental_project/images/ERDiagram%20(2).jpg)
 
-
+## Final Entitiy Relationship Diagram
 
 # Project Tracking
 
