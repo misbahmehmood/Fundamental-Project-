@@ -10,6 +10,7 @@
     * [Final ERDiagram](Final-Entitiy-Relationship-Diagram)
 * [Risk Assessment](#Risk-Assessment)
 * [Testing](#Testing)
+* [Improvements for the future](#Improvements)
 
 # Introduction
 A solo project building a CRUD application using tools and methodologies used during QA Academy training, due to present at the beginning of week 6. 
@@ -54,15 +55,15 @@ Feature-Branch model which will subsequently be built through a CI server and de
 
 # Technology Used
 A list of technologies was also given:
-1. Kanban Board- Trello board
-2. Database- GCP SQL Server
-3. Programming Language- Python
-4. Unit Testing with Python- Pytest
+1. __Kanban Board-__ Trello board
+2. __Database-__ GCP SQL Server
+3. __Programming Language-__ Python
+4. __Unit Testing with Python-__ Pytest
 5. Integration Testing with Python (selenium)
-6. Front-end - Flask (HTML, some CSS and Jinja2)
-7. Version Control - Git
-8. CI Server - Jenkins
-9. Cloud server - GCP
+6. __Front-end -__ Flask (HTML, some CSS and Jinja2)
+7. __Version Control -__ Git
+8. __CI Server -__ Jenkins
+9. __Cloud server -__ GCP
 
 # Project Tracking
 A trello board was used for project management and tracking. Having already used trello for practise exercises during training, it was easy to use and simple to follow.
@@ -71,6 +72,8 @@ The user stories were planned out first implementing the MoSCoW principle to kee
 ![](https://raw.githubusercontent.com/misbahmehmood/fundamental_project/images/images/Initial%20trello%20board.png)
 ## Final Trello board
 ![](https://raw.githubusercontent.com/misbahmehmood/fundamental_project/images/images/Final%20trello.png)
+
+Initially I had wanted the database tables to be pre defined with songs related to both personality types. However, when starting the application I was unsure how that could be added so a form was used for the user to add their own music. 
 ## Initial Entitiy Relationship Diagram
 At least 2 tables sharing a relationship were required to meet the MVP requirement.
 ERDiagrams were used to help organise the database.
@@ -94,6 +97,6 @@ Initially I wanted to include the playlist table so that songs could be saved in
 
 # Testing
 
-
-
+# Improvements
+* __Website experience/create functionality-__ With gaining more experience with Python, I later understood how to add a pre defined Songs selection. This would give the user a better experience as it would include the songs tailored to their personalities without having to manually add songs themselves. 
 
