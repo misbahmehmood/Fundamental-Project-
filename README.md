@@ -33,6 +33,11 @@ Initially I wanted to include the playlist table so that songs could be saved in
 # Project Tracking
 
 # Risk Assessment
+![](https://raw.githubusercontent.com/misbahmehmood/fundamental_project/images/images/Untitled%20Diagram.jpg)
+
+![](https://raw.githubusercontent.com/misbahmehmood/fundamental_project/images/images/Risk%20Assessment.png)
+
+
 
 # Testing
 
