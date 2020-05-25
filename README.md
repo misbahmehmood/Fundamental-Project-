@@ -119,4 +119,11 @@ Having used systemd service to deploy the application in the background, there w
 * __Testing__- Increase testing coverage.
 * __Improve front end design__- To meet the MVP requirements, there was a priortisation in working software over making the application look good so I had not focused too much on front end design.
 * __Feature branch model__ - use feature branch model more effectively. In future I would merge changes onto the master branch after each task on trello board is completed to track changes better.
+* __Error management__- As stated in the risk assessment, an operational risk I had identified was encountering errors that would negatively affect the end product. Many errors occurred throughout the project such as with the Jenkins server and Pytest, meaning I had to respond to change over following a plan. In future, I would manage workload and time better so that I prioritise completing tasks that require using software I do not have a lot of experience with. That way, there would be more opportunities to have support from trainers. 
+# Authors
+Misbah Mehmood - QA Academy Trainee
+
+# Acknowledgements
+* QA Trainers 
+* My group for helping me with any problems I had during the project 
 
