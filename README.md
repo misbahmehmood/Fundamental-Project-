@@ -68,12 +68,13 @@ A list of technologies was also given:
 
 # Project Tracking
 A trello board was used for project management and tracking. Having already used trello for practise exercises during training, it was easy to use and simple to follow.
-The user stories were planned out first implementing the MoSCoW principle to keep the focus on the essential areas. Scrum framework was used with the sprint backlog, this was then explored further by adding specific tasks relating to the backlog. 
+The user stories were planned out first implementing the MoSCoW principle to keep the focus on the essential areas. Scrum framework was used with the sprint backlog, this was then explored further by adding specific tasks and sprints relating to the backlog. 
 ## Initial Trello board 
 ![](https://raw.githubusercontent.com/misbahmehmood/fundamental_project/images/images/Initial%20trello%20board.png)
+
 ## Final Trello board
 ![](https://raw.githubusercontent.com/misbahmehmood/fundamental_project/images/images/Final%20trello.png)
-
+Once the documentations had been completed, the timescale to create and build the application was a week
  
 ## Initial Entitiy Relationship Diagram
 At least 2 tables sharing a relationship were required to meet the MVP requirement.
@@ -101,8 +102,21 @@ I had also wanted the Songs table to be pre defined with songs related to both p
 # Testing
 
 # Deployment
+
 ![](https://raw.githubusercontent.com/misbahmehmood/fundamental_project/images/images/CI%20Pipeline.jpg)
+
+### Version Control System
+I used three branches on the Version Control System  using the feature branch model. At the beginning, I used the development branch and merged with master once I had working code after completing individual task/sprint sections in the trello board. Later all my work was completed on the development branch. When updating the READme file, which required a lot of images, I created another branch 'images' to store all the diagrams and merge with master when READme was completed.
+
+### CI Server
+A lot of issues occurred when deploying with Jenkins due to bugged installations requiring reinstallation and recreating the project on Jenkins. On reinstallation, Jenkins was running the application but builds were not reaching the successful stage.
+
+Having used systemd service to deploy the application in the background, there were multiple occurences of errors which did not allow me access to the application. After many failed attempts to debug the errors, I decided to not use systemd services in order to have a MVP. 
 
 # Improvements
 * __Website experience/create functionality-__ With gaining more experience with Python, I later understood how to add a pre defined Songs selection. This would give the user a better experience as it would include the songs tailored to their personalities without having to manually add songs themselves. 
+
+* __Testing__- Increase testing coverage.
+* __Improve front end design__- To meet the MVP requirements, there was a priortisation in working software over making the application look good so I had not focused too much on front end design.
+* __Feature branch model__ - use feature branch model more effectively. In future I would merge changes onto the master branch after each task on trello board is completed to track changes better.
 
