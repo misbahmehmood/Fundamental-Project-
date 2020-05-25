@@ -100,6 +100,12 @@ I had also wanted the Songs table to be pre defined with songs related to both p
 
 
 # Testing
+Unit testing with pytest was used to test the application was working as expected. 
+![](https://raw.githubusercontent.com/misbahmehmood/fundamental_project/images/images/Test%20coverage.jpg)
+
+My test coverage showed 55% coverage. After having successfully written and passed the first few tests, pytest later started to hang for a long time, to the point where I had to abort it manually. Pytest was not giving any errors or warnings leaving me unable to gain coverage or test fully.
+
+I had written tests for each CRUD functionality as well as checking the link with the DB, however, was not able to get the results due to problems with the running of pytest. 
 
 # Deployment
 
@@ -116,7 +122,7 @@ Having used systemd service to deploy the application in the background, there w
 # Improvements
 * __Website experience/create functionality-__ With gaining more experience with Python, I later understood how to add a pre defined Songs selection. This would give the user a better experience as it would include the songs tailored to their personalities without having to manually add songs themselves. 
 
-* __Testing__- Increase testing coverage.
+* __Testing__- Increase testing coverage by figuring out why pytest hangs and improve percentage.
 * __Improve front end design__- To meet the MVP requirements, there was a priortisation in working software over making the application look good so I had not focused too much on front end design.
 * __Feature branch model__ - use feature branch model more effectively. In future I would merge changes onto the master branch after each task on trello board is completed to track changes better.
 * __Error management__- As stated in the risk assessment, an operational risk I had identified was encountering errors that would negatively affect the end product. Many errors occurred throughout the project such as with the Jenkins server and Pytest, meaning I had to respond to change over following a plan. In future, I would manage workload and time better so that I prioritise completing tasks that require using software I do not have a lot of experience with. That way, there would be more opportunities to have support from trainers. 
