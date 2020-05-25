@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+  
+{% block body_content %}
+<h1>Find the right songs for you</h1>   
+    <form  method= 'POST' action= ''>
+        {{ form.hidden_tag() }}
+        {{ form.options.label }}<br>
+        {{ form.options }}
+        <br>
+        {{ form.submit }}
+    </form>
+
+{% endblock %}

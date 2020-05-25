@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+  
+{% block body_content %}
+<nav>
+    <a href="{{ url_for('extravert_read') }}">See your Songs</a>
+</nav>
+<br>
+<h2>+Add a Song</h2>
+
+<form  method= 'POST' action= ''>
+    <p>
+        {{ form.hidden_tag() }}
+        {{ form.title.label }}<br>
+        {{ form.title }}
+    </p>
+    <p>
+        {{ form.artist.label }}<br>
+        {{ form.artist }}
+    </p>
+    <p>
+        {{ form.genre.label }}<br>
+        {{ form.genre }}
+    </p>
+    <p>
+        {{ form.instrument.label }} <br>
+        {{ form.instrument }}
+    </p>
+    <p>
+        {{ form.link.label }} <br>
+        {{ form.link }}
+    </p>
+        {{ form.submit }}
+</form>
+
+{% endblock %}

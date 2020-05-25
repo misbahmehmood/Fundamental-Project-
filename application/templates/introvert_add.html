@@ -1,0 +1,80 @@
+
+{% extends 'layout.html' %}
+
+
+{% block body_content %}
+<nav>
+        <a href="{{ url_for('introvert') }}">Add more Songs</a>
+</nav>
+<br>
+<h2>Your Songs</h2>
+<br>
+{% with messages = get_flashed_messages() %}
+                {% if messages %}
+                        {% for message in messages %}
+                                {{ message }}
+                        {% endfor %}
+                {% endif %}
+{% endwith %}
+{% for song in songs %}
+        <hr>
+	<h4>{{ song.title }}</h4>
+	{% if song.title.errors %}
+                <div class="error">
+                        {% for error in song.title.errors %}
+                                <span>{{ error }}</span>
+                        {% endfor %}
+                </div>
+                
+        {% endif %}
+                
+	<small>By:{{ song.artist }}</small>
+	{% if song.artist.errors %}
+                <div class="error">
+                        {% for error in song.artist.errors %}
+                                <span>{{ error }}</span>
+                        {% endfor %}
+                </div>
+        {% endif %}
+		<br>
+	<small>Genre: {{ song.genre }}</small>
+	{% if song.genre.errors %}
+                <div class="error">
+                        {% for error in song.genre.errors %}
+                                <span>{{ error }}</span>
+                        {% endfor %}
+                </div>
+        {% endif %}
+		<br>
+	<small>Instrument: {{ song.instrument }}</small>
+	{% if song.instrument.errors %}
+                <div class="error">
+                        {% for error in song.instrument.errors %}
+                                <span>{{ error }}</span>
+                        {% endfor %}
+                </div>
+        {% endif %} 
+        
+                <br>
+                {% if song.link %}
+                        <small>Link: {{ song.link }}></small>
+                        {% if song.link.errors %}
+                                <div class="error">
+                                {% for error in song.link.errors %}
+                                        <span>{{ error }}</span>
+                                {% endfor %}
+                        {% endif %}
+                                </div>
+                {% else %}
+                        <small>Link: 'Not Supplied'</small>
+                {% endif %} 
+                
+                <br>
+                <br>
+                <small>Date: {{ song.date }}</small>
+                <br>
+                <a href='/introvert/delete/{{song.id}}'>Delete</a>
+                <a href='/introvert/update/{{song.id}}'>Update</a>
+		
+{% endfor %}
+{% endblock %}
