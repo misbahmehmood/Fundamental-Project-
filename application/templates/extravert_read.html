@@ -55,7 +55,11 @@
         <br>
         {% if song.link %}
                         <small>Link:</small><br>
-                        <small><textarea> {{ song.link }}</textarea></small>
+                        <small>{{ song.link }}</small><br>
+                        <iframe id="ytplayer" type="text/html" width="640" height="360" src="https://youtube.com/embed/{{song.link}}"></iframe>
+                       
+        
+                        
                         {% if song.link.errors %}
                                 <div class="error">
                                 {% for error in song.link.errors %}
