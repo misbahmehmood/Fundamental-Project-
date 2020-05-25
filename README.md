@@ -10,6 +10,7 @@
     * [Final ERDiagram](Final-Entitiy-Relationship-Diagram)
 * [Risk Assessment](#Risk-Assessment)
 * [Testing](#Testing)
+* [Deployment](#Deployment)
 * [Improvements for the future](#Improvements)
 
 # Introduction
@@ -73,7 +74,7 @@ The user stories were planned out first implementing the MoSCoW principle to kee
 ## Final Trello board
 ![](https://raw.githubusercontent.com/misbahmehmood/fundamental_project/images/images/Final%20trello.png)
 
-Initially I had wanted the database tables to be pre defined with songs related to both personality types. However, when starting the application I was unsure how that could be added so a form was used for the user to add their own music. 
+ 
 ## Initial Entitiy Relationship Diagram
 At least 2 tables sharing a relationship were required to meet the MVP requirement.
 ERDiagrams were used to help organise the database.
@@ -88,6 +89,8 @@ Below is the initial ERDiagram making use of the MoSCoW principle, ensuring to f
 
 Initially I wanted to include the playlist table so that songs could be saved into a playlist for ease of use. However, due to time constraints, I decided to only use 2 tables linked with a one to many relationship. 
 
+I had also wanted the Songs table to be pre defined with songs related to both personality types. However, when starting the application I was unsure how that could be added, so a form was used for the user to add their own songs.
+
 # Risk Assessment
 ![](https://raw.githubusercontent.com/misbahmehmood/fundamental_project/images/images/Risk%20Assessment%20key.jpg)
 
@@ -96,6 +99,9 @@ Initially I wanted to include the playlist table so that songs could be saved in
 
 
 # Testing
+
+# Deployment
+![](https://raw.githubusercontent.com/misbahmehmood/fundamental_project/images/images/CI%20Pipeline.jpg)
 
 # Improvements
 * __Website experience/create functionality-__ With gaining more experience with Python, I later understood how to add a pre defined Songs selection. This would give the user a better experience as it would include the songs tailored to their personalities without having to manually add songs themselves. 
