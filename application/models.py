@@ -16,7 +16,7 @@ class Songs(db.Model):
     artist=db.Column(db.String(30), nullable=False)
     genre=db.Column(db.String(20), nullable=False)
     instrument=db.Column(db.String(20), nullable=False)
-    link=db.Column(db.String(200), nullable=False, default='Not Supplied')
+    link=db.Column(db.String(200), nullable=False)
     date= db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     personality_id=db.Column(db.Integer, db.ForeignKey('personality.id'))
     def __repr__(self):
