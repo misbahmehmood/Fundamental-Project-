@@ -60,11 +60,10 @@ A list of technologies was also given:
 2. __Database-__ GCP SQL Server
 3. __Programming Language-__ Python
 4. __Unit Testing with Python-__ Pytest
-5. Integration Testing with Python (selenium)
-6. __Front-end -__ Flask (HTML, some CSS and Jinja2)
-7. __Version Control -__ Git
-8. __CI Server -__ Jenkins
-9. __Cloud server -__ GCP
+5. __Front-end -__ Flask (HTML, some CSS and Jinja2)
+6. __Version Control -__ Git
+7. __CI Server -__ Jenkins
+8. __Cloud server -__ GCP
 
 # Project Tracking
 A trello board was used for project management and tracking. Having already used trello for practise exercises during training, it was easy to use and simple to follow.

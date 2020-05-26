@@ -12,9 +12,9 @@ python3 -m venv venv
 
 source ~ /.bashrc
 
-source /var/lib/jenkins/workspace/project_freestyle/venv/bin/activate
+source /var/lib/jenkins/workspace/sfia1_project/venv/bin/activate
 
-cd /var/lib/jenkins/workspace/project_freestyle
+cd /var/lib/jenkins/workspace/sfia1_project
 
 pip3 install -r requirements.txt
 
