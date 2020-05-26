@@ -6,8 +6,8 @@
 * [Project Tracking/Planning](#Project-Tracking)
     * [Initial Tracking Board](#Initial-Trello-board)
     * [Final Tracking Board](#Final-Trello-board)
-    * [Initial ERDiagram]( Entitiy-Relationship-Diagram)
-    * [Final ERDiagram](Final-Entitiy-Relationship-Diagram)
+    * [Initial ERDiagram]( Entity-Relationship-Diagram)
+    * [Final ERDiagram](Final-Entity-Relationship-Diagram)
 * [Risk Assessment](#Risk-Assessment)
 * [Testing](#Testing)
 * [Deployment](#Deployment)
@@ -75,7 +75,7 @@ The user stories were planned out first implementing the MoSCoW principle to kee
 ![](https://raw.githubusercontent.com/misbahmehmood/fundamental_project/images/images/Final%20trello.png)
 Once the documentations had been completed, the timescale to create and build the application was a week
  
-## Initial Entitiy Relationship Diagram
+## Initial Entity Relationship Diagram
 At least 2 tables sharing a relationship were required to meet the MVP requirement.
 ERDiagrams were used to help organise the database.
 
@@ -83,7 +83,7 @@ Below is the initial ERDiagram making use of the MoSCoW principle, ensuring to f
 
 ![image](https://raw.githubusercontent.com/misbahmehmood/fundamental_project/images/images/ERDiagram%20(2).jpg)
 
-## Final Entitiy Relationship Diagram
+## Final Entity Relationship Diagram
 
 ![image](https://raw.githubusercontent.com/misbahmehmood/fundamental_project/images/images/Final%20ERD.jpg)
 
