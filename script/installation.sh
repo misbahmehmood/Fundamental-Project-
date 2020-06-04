@@ -1,25 +1,14 @@
 #!/usr/bin/env bash
 
-sudo apt update -y
+sudo cp etc/systemd/system/flask.service /etc/systemd/system/
 
-sudo apt install python3 -y
+sudo systemctl daemon-reload
 
-sudo apt install python3-pip -y
+sudo systemctl enable flask.service
 
-sudo apt install python3-venv -y
-
-python3 -m venv venv
-
-source ~ /.bashrc
-
-source /var/lib/jenkins/workspace/sfia1_pipeline/venv/bin/activate
-
-cd /var/lib/jenkins/workspace/sfia1_pipeline
+source venv/bin/activate
 
 pip3 install -r requirements.txt
-
-gunicorn --bind=0.0.0.0:5000 application:app
-
 
 
 

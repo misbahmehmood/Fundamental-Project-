@@ -3,7 +3,7 @@ Description=Sfia1 Project
 
 [Service]
 User=jenkins
-ExecStart=/var/lib/jenkins/workspace/sfia1_pipeline/script/installation.sh
+ExecStart=/var/lib/jenkins/workspace/sfia1_pipeline/script/after_installation.sh
 
 [Install]
 WantedBy=multi-user.target
