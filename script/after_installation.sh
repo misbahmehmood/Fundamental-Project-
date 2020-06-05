@@ -1,5 +1,6 @@
   
 #!/bin/bash
+source ~.bashrc
 
 source /var/lib/jenkins/workspace/sfia1_pipeline/venv/bin/activate
 
