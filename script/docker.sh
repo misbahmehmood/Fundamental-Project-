@@ -1,5 +1,5 @@
 #!/bin/bash
 
-source ~.bashrc
+source ~/.bashrc
 
 docker-compose up -d
