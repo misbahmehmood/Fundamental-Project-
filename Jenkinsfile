@@ -8,10 +8,11 @@ pipeline {
             }
         }
         
-        }
+        
         stage('Run the application') {
             steps {
                 sh './script/docker.sh'
             }
         }
     }
+}
