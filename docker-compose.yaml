@@ -7,9 +7,9 @@ services:
     - target: 5000
       published: 5000
       protocol: tcp
-  environment:
-    - PROJECT_URI=$(PROJECT_URI)
-      SECRET_KEY=$(SECRET_KEY)
+    environment:
+    - PROJECTURI=${PROJECT_URI}
+    - SECRETKEY=${SECRET_KEY}
 
 
       

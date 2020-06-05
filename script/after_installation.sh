@@ -1,7 +1,0 @@
-  
-#!/bin/bash
-source ~.bashrc
-
-source /var/lib/jenkins/workspace/sfia1_project/venv/bin/activate
-
-python3 /var/lib/jenkins/workspace/sfia1_project/app.py
