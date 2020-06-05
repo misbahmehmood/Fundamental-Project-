@@ -3,8 +3,8 @@ from flask_sqlalchemy import SQLAlchemy
 from os import getenv
 
 app= Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI']=getenv('PROJECT_URI')
-app.config['SECRET_KEY']=getenv('SECRET_KEY')
+app.config['SQLALCHEMY_DATABASE_URI']=getenv('PROJECTURI')
+app.config['SECRET_KEY']=getenv('SECRETKEY')
 db= SQLAlchemy(app)
 
 from application import routes

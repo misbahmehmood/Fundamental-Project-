@@ -8,8 +8,8 @@ services:
       published: 5000
       protocol: tcp
     environment:
-    - PROJECTURI=${PROJECT_URI}
-    - SECRETKEY=${SECRET_KEY}
+    - PROJECTURI=${PROJECTURI}
+    - SECRETKEY=${SECRETKEY}
 
 
       
